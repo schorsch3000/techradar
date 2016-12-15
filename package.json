@@ -25,6 +25,7 @@
   ],
   "license": "ISC",
   "devDependencies": {
+    "babel-cli": "6.18.0",
     "babel-core": "6.14.0",
     "babel-loader": "6.2.5",
     "css-loader": "0.25.0",
@@ -47,9 +48,11 @@
   "dependencies": {
     "chance": "1.0.4",
     "d3": "4.2.6",
+    "d3-dsv": "https://registry.npmjs.org/d3-dsv/-/d3-dsv-1.0.3.tgz",
     "d3-tip": "0.7.1",
     "lodash": "4.16.2",
     "ramda": "0.22.1",
+    "raw-loader": "0.5.1",
     "sanitize-html": "1.13.0",
     "tabletop": "1.4.3"
   }

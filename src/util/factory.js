@@ -9,7 +9,6 @@ const _ = {
     each: require('lodash/each')
 };
 
-import { curry } from "ramda";
 
 const InputSanitizer = require('./inputSanitizer');
 const Radar = require('../models/radar');
@@ -23,24 +22,14 @@ const ContentValidator = require('./contentValidator');
 const Sheet = require('./sheet');
 const ExceptionMessages = require('./exceptionMessages');
 
-const createRadar = (sheets, tabletop) => {
+const parseCsv = require("./csvParser");
+
+const createRadar = (title, blips) => {
     try {
-        const sheetName = Object.keys(sheets)[0];
-        const columnNames = tabletop.sheets(sheetName).column_names;
-
-        const contentValidator = new ContentValidator(columnNames);
-        contentValidator.verifyContent();
-        contentValidator.verifyHeaders();
-
-        const all = tabletop.sheets(sheetName).all();
-        const blips = _.map(all, new InputSanitizer().sanitize);
-
-        document.title = tabletop.googleSheetName;
+        document.title = title;
         d3.selectAll(".loading").remove();
 
-        console.log(blips);
         const rings = _.map(_.uniqBy(blips, 'ring'), 'ring');
-        console.log(rings);
 
         const ringMap = {};
         const maxRings = 4;
@@ -78,6 +67,9 @@ const GoogleSheet = function (sheetReference) {
     const self = {};
 
     self.build = function () {
+        console.log("here 2");
+        console.log(parseCsv(() => {}));
+
         const sheet = new Sheet(sheetReference);
         sheet.exists(function(notFound) {
             if (notFound) {
@@ -87,7 +79,19 @@ const GoogleSheet = function (sheetReference) {
 
             Tabletop.init({
                 key: sheet.id,
-                callback: createRadar
+                callback: (sheets, tabletop) => {
+                    const sheetName = Object.keys(sheets)[0];
+                    const columnNames = tabletop.sheets(sheetName).column_names;
+
+                    const contentValidator = new ContentValidator(columnNames);
+                    contentValidator.verifyContent();
+                    contentValidator.verifyHeaders();
+
+                    const all = tabletop.sheets(sheetName).all();
+                    const blips = _.map(all, new InputSanitizer().sanitize);
+
+                    createRadar(tabletop.googleSheetName, blips);
+                }
             });
         });
     };
