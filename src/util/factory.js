@@ -24,7 +24,7 @@ const createRadarFromCsv = () => {
     const all = d3.csvParse(rawCsv);
     const blips = _.map(all, new InputSanitizer().sanitize);
 
-    createRadar("Tech Radar", blips);
+    createRadar("Technology Radar", blips);
 };
 
 function createRadar (title, blips) {
