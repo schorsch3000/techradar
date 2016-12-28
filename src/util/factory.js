@@ -18,13 +18,16 @@ const MalformedDataError = require('../exceptions/malformedDataError');
 const SheetNotFoundError = require('../exceptions/sheetNotFoundError');
 const ExceptionMessages = require('./exceptionMessages');
 
+/**
+ * Reference your own radar data below.
+ */
+//const rawCsv = require("raw-loader!../../radars/201701-radar.csv");
 const rawCsv = require("raw-loader!../../radars/radar.csv");
 
-const createRadarFromCsv = () => {
-    const all = d3.csvParse(rawCsv);
+const createRadarFromCsv = function() {
+    const all = d3.csvParse(rawCsv);    
     const blips = _.map(all, new InputSanitizer().sanitize);
-
-    createRadar("Technology Radar", blips);
+    createRadar("Technologie-Radar 2017", blips);
 };
 
 function createRadar (title, blips) {
@@ -68,7 +71,7 @@ function createRadar (title, blips) {
 
 function displayErrorMessage(exception) {
     d3.selectAll(".loading").remove();
-    let message = 'Oops! It seems like there are some problems with loading your data. ';
+    var message = 'Oops! It seems like there are some problems with loading your data. ';
 
     if (exception instanceof MalformedDataError) {
         message = message.concat(exception.message);

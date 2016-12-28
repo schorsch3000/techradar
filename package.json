@@ -15,19 +15,16 @@
     "flow": "flow",
     "shrinkpack": "rm -rf ./node_modules && rm -f npm-shrinkwrap.json && npm i && npm shrinkwrap --dev && shrinkpack"
   },
-  "author": "ThoughtWorks",
+  "author": "Thomas Franz",
   "repository": {
     "type": "git",
-    "url": "https://github.com/danrspencer/build-your-own-radar"
+    "url": "https://github.com/thomasfranz/build-your-own-radar"
   },
   "keywords": [
     "tech-radar"
   ],
   "license": "ISC",
   "devDependencies": {
-    "babel-cli": "6.18.0",
-    "babel-core": "6.14.0",
-    "babel-loader": "6.2.5",
     "css-loader": "0.25.0",
     "extract-text-webpack-plugin": "1.0.1",
     "file-loader": "0.9.0",
@@ -46,14 +43,15 @@
     "yargs": "5.0.0"
   },
   "dependencies": {
-    "chance": "1.0.4",
-    "d3": "4.2.6",
-    "d3-dsv": "https://registry.npmjs.org/d3-dsv/-/d3-dsv-1.0.3.tgz",
+    "chance": "1.0.4",    
+    "d3": "4.4.0",    
     "d3-tip": "0.7.1",
+    "forever": "0.15.3",
+    "http-server": "0.9.0",
     "lodash": "4.16.2",
+    "papaparse": "4.1.2",
     "ramda": "0.22.1",
     "raw-loader": "0.5.1",
-    "sanitize-html": "1.13.0",
-    "tabletop": "1.4.3"
+    "sanitize-html": "1.13.0"
   }
 }
