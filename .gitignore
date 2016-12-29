@@ -9,6 +9,8 @@ examples
 
 radars/*-radar*
 
+scripts/*.log
+
 coverage/
 
 .idea/
