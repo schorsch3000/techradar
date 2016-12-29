@@ -7,7 +7,7 @@ examples
 *.swp
 *.swo
 
-radars/*-radar.csv
+radars/*-radar*
 
 coverage/
 

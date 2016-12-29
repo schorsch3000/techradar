@@ -21,11 +21,11 @@ const ExceptionMessages = require('./exceptionMessages');
 /**
  * Reference your own radar data below.
  */
-//const rawCsv = require("raw-loader!../../radars/201701-radar.csv");
-const rawCsv = require("raw-loader!../../radars/radar.csv");
+const rawCsv = require("raw-loader!../../radars/201701-excel-utf8.csv");
+//const rawCsv = require("raw-loader!../../radars/radar.csv");
 
 const createRadarFromCsv = function() {
-    const all = d3.csvParse(rawCsv);    
+    const all = d3.dsvFormat(";").parse(rawCsv); //d3.csvParse(rawCsv);        
     const blips = _.map(all, new InputSanitizer().sanitize);
     createRadar("Technologie-Radar 2017", blips);
 };
