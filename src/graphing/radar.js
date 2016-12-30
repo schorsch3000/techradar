@@ -6,7 +6,7 @@ const _ = require('lodash/core');
 const RingCalculator = require('../util/ringCalculator');
 
 const Radar = function (size, radar) {
-  var svg, radarElement, blipWidth = 22;
+  var svg, radarElement, blipWidth = 20;
 
   var tip = d3tip().attr('class', 'd3-tip').html(function (text) {
     return text;
@@ -136,8 +136,8 @@ const Radar = function (size, radar) {
     var adjustX = Math.sin(toRadian(startAngle)) - Math.cos(toRadian(startAngle));
     var adjustY = -Math.cos(toRadian(startAngle)) - Math.sin(toRadian(startAngle));
 
-    var radius = chance.floating({min: minRadius + blipWidth / 2, max: maxRadius - blipWidth / 2});
-    var angleDelta = Math.asin(blipWidth / 2 / radius) * 180 / Math.PI;
+    var radius = chance.floating({min: minRadius + blipWidth , max: maxRadius - blipWidth / 2});
+    var angleDelta = Math.asin(blipWidth  / radius) * 180 / Math.PI;
     angleDelta = angleDelta > 45 ? 45 : angleDelta;
     var angle = toRadian(chance.integer({min: angleDelta, max: 90 - angleDelta}));
 
@@ -511,12 +511,12 @@ const Radar = function (size, radar) {
     radarElement.style('height', size + 14 + 'px');
     svg = radarElement.append("svg").call(tip);
     svg.attr('id', 'radar-plot').attr('width', size).attr('height', size + 14);
-
+     
     _.each(quadrants, function (quadrant) {
       var quadrantGroup = plotQuadrant(rings, quadrant);
       plotLines(quadrantGroup, quadrant);
-      plotTexts(quadrantGroup, rings, quadrant);
-      plotBlips(quadrantGroup, rings, quadrant);
+      plotTexts(quadrantGroup, rings, quadrant); 
+      plotBlips(quadrantGroup, rings, quadrant);           
     });
 
     plotRadarFooter();

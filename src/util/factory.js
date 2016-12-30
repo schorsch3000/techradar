@@ -21,7 +21,7 @@ const ExceptionMessages = require('./exceptionMessages');
 /**
  * Reference your own radar data below.
  */
-const rawCsv = require("raw-loader!../../radars/201701-excel-utf8.csv");
+const rawCsv = require("raw-loader!../../radars/201701-radar-excel-utf8.csv");
 //const rawCsv = require("raw-loader!../../radars/radar.csv");
 
 const createRadarFromCsv = function() {
