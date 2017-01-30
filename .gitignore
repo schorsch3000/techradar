@@ -10,7 +10,7 @@ examples
 radars/*-radar*
 
 scripts/*.log
-
+scripts/deploy.sh
 coverage/
 
 .idea/
