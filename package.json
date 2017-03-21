@@ -1,9 +1,9 @@
 {
   "name": "tech-radar",
   "version": "0.1.0",
-  "description": "",
+  "description": "Visualize data interactively on a web page as a radar.",
   "main": "index.js",
-  "license":"GPL-3.0",
+  "license":"AGPL-3.0",
   "scripts": {
     "test": "npm run flow && npm run jasmine",    
     "dev": "NODE_ENV=development webpack-dev-server --dev --inline",    
