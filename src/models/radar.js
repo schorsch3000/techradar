@@ -1,5 +1,5 @@
 const MalformedDataError = require('../exceptions/malformedDataError');
-const ExceptionMessages = require('../util/exceptionMessages');
+const ExceptionMessages = require('../exceptions/exceptionMessages');
 
 const _ = {
   map: require('lodash/map'),

@@ -1,6 +1,6 @@
-const ContentValidator = require('../../src/util/contentValidator');
+const ContentValidator = require('../../src/radar-ui/contentValidator');
 const MalformedDataError = require('../../src/exceptions/malformedDataError');
-const ExceptionMessages = require('../../src/util/exceptionMessages');
+const ExceptionMessages = require('../../src/exceptions/exceptionMessages');
 
 
 describe('ContentValidator', function () {

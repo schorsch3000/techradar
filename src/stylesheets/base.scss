@@ -5,11 +5,25 @@
 @import 'error';
 @import 'header';
 @import 'footer';
+@import 'table';
+@import 'navigation';
 
 body {
   font: 18px 'Open Sans';
   -webkit-font-smoothing: antialiased;
   margin: 0;
+}
+
+#content {
+  width: 80%;
+  margin: auto;
+  text-align: justify;
+}
+
+#blueprint {
+  width: 80%;
+  margin: auto;
+  text-align: justify;
 }
 
 @media print {
@@ -20,11 +34,22 @@ body {
     padding: 0;
   }
 
+  navigation {
+    
+    a:after {
+      content:none;
+    }
+
+    navigation {
+      display:none;
+    }
+  } 
+
   @page {
     margin: 2cm;
   }
 
-  a:after {
+   a:after {
     content: " <" attr(href) "> ";
     font-size: 0.8em;
     font-weight: normal;
@@ -34,19 +59,35 @@ body {
     display: none;
   }
 
+  #radar {
+    height: initial !important;
+    margin-top:25px;
+  }
+
+  svg {
+    display:none;
+  }
+
+  #blueprint {
+    display:block;
+    page-break-before: always;    
+    page-break-after: always;  
+    width: 100%;  
+  }  
+
   .quadrant-table {
     .quadrant-table__name {
       display: block;
       font-size: 36pt;
       padding: 0 10px;
-      margin-bottom: 20px;
+      margin-bottom: 20px;      
     }
 
     &.first .quadrant-table__name {
       color: $green;
     }
     &.second .quadrant-table__name {
-      color: $blue;
+      color: $brown;
     }
     &.third .quadrant-table__name {
       color: $orange;
@@ -58,6 +99,7 @@ body {
 
   .quadrant-table {
     page-break-after: always;
+    display:block;
 
     ul {
       list-style: none;
@@ -72,7 +114,7 @@ body {
 
     h3 {
 
-      page-break-before: always;
+      //page-break-before: always;
       padding: 0 10px;
       text-transform: uppercase;
       font-size: 18pt;
@@ -92,6 +134,13 @@ body {
   .blip-item-description {
     padding: 0 15px;
   }
+
+  .radar-title__text {
+      font-size: 40px;
+      width: 100%;
+      padding: 10px;
+      display:block;
+    }
 
   header {
     text-align: left;
@@ -149,15 +198,24 @@ body {
 
 @media screen {
 
+  .print-page-header {
+    display:none;
+  }
+
   #radar {
-    width: 80%;
+    
+    padding-left:10%;
+    padding-right:10%;
     margin: 0 auto;
     position: relative;
+    padding-bottom:20px;
+    overflow: overlay;
 
     svg#radar-plot {
       margin: 0 auto;
       transition: all 1s ease;
-      position: absolute;
+      //position: absolute;
+      display: block;
       left: 0;
       right: 0;
 
@@ -201,7 +259,7 @@ body {
           stroke: none;
         }
         &.second {
-          fill: $blue;
+          fill: $brown;
           stroke: none;
         }
         &.third {

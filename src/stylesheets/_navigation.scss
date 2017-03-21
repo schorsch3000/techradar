@@ -1,4 +1,24 @@
-header {
+navigation {
+  background-color:lightgray;
+  display: block;
+}
+
+navigation a {    
+    text-decoration: none;
+    padding:2px;
+  }
+
+navigation a:hover {
+    text-decoration: underline;
+    background-color:$light-orange;
+    color:white;
+}
+
+navigation a:active {
+    background-color:$light-orange;
+  }
+
+navigation {
   width: 100%;
   line-height: 60px;
   text-align: center;
@@ -18,17 +38,23 @@ header {
       width: 90%;
       display: block;
       text-align:center;
-      height:90px;
+      //height:90px;
 
       .radar-title__text {        
         h1 {
           font-size: 55px;                              
           margin: 0;
-          padding: 0;                               
+          padding: 0;  
+          small {              
+              font-size:x-small;
+              color: gray;
+              font-weight: lighter
+           }         
         }
       }
 
-      .radar-title__logo {        
+      .radar-title__logo {
+        float: right;
         a {
           border-bottom: none;
         }
@@ -37,7 +63,7 @@ header {
         }
       }
     }
-  }
+  }  
 
   .home-link {
     color: $blue;
@@ -78,7 +104,7 @@ header {
       }
       &.second {
         color: white;
-        background-color: $brown;
+        background-color: $blue;
       }
       &.third {
         color: white;
@@ -96,7 +122,7 @@ header {
         color: $white;
       }
       &.second {
-        background-color: $brown;
+        background-color: $blue;
         color: $white;
       }
       &.third {

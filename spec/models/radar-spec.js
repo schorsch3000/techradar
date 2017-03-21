@@ -3,7 +3,7 @@ const Quadrant = require('../../src/models/quadrant');
 const Ring = require('../../src/models/ring');
 const Blip = require('../../src/models/blip');
 const MalformedDataError = require('../../src/exceptions/malformedDataError');
-const ExceptionMessages = require('../../src/util/exceptionMessages');
+const ExceptionMessages = require('../../src/exceptions/exceptionMessages');
 
 describe('Radar', function () {
 
