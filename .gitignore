@@ -6,6 +6,7 @@ examples
 *.swa
 *.swp
 *.swo
+*.log
 
 coverage/
 
