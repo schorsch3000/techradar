@@ -1,16 +1,13 @@
 node_modules
 node_cache
 bower_components
+node_shrinkwrap
 dist
 examples
 *.swa
 *.swp
 *.swo
 
-radars/*-radar*
-
-scripts/*.log
-scripts/deploy.sh
 coverage/
 
 .idea/

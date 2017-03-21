@@ -1,4 +1,4 @@
-const RingCalculator = require('../../src/util/ringCalculator');
+const RingCalculator = require('../../src/radar-ui/ringCalculator');
 
 describe('ringCalculator', function(){
     var ringLength, radarSize, ringCalculator;

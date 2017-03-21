@@ -1,4 +1,4 @@
-const InputSanitizer = require('../../src/util/inputSanitizer');
+const InputSanitizer = require('../../src/radar-ui/inputSanitizer');
 
 describe('InputSanitizer', function(){
     var sanitizer, rawBlip, blip;

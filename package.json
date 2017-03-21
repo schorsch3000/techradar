@@ -1,57 +1,50 @@
 {
-  "name": "build-your-own-radar",
-  "version": "0.3.0",
+  "name": "tech-radar",
+  "version": "0.1.0",
   "description": "",
   "main": "index.js",
+  "license":"GPL-3.0",
   "scripts": {
-    "test": "npm run flow && npm run jasmine",
-    "dev": "webpack-dev-server --dev --inline",
-    "build": "webpack --prod",
-    "examples:clean": "rm -rf examples/",
-    "examples:copy": "mkdir examples && cp -r dist/* examples",
-    "examples": "npm run build && npm run examples:clean && npm run examples:copy",
-    "publishExamples": "node ./scripts/publish-examples.js",
+    "test": "npm run flow && npm run jasmine",    
+    "dev": "NODE_ENV=development webpack-dev-server --dev --inline",    
+    "build": "NODE_ENV=production webpack -p --progress --colors",
     "jasmine": "istanbul cover jasmine",
     "flow": "flow",
+    "debug": "node-debug webpack",
     "shrinkpack": "rm -rf ./node_modules && rm -f npm-shrinkwrap.json && npm i && npm shrinkwrap --dev && shrinkpack"
   },
   "author": "Thomas Franz",
   "repository": {
-    "type": "git",
-    "url": "https://github.com/thomasfranz/build-your-own-radar"
+    "type": "git"
   },
   "keywords": [
     "tech-radar"
   ],
-  "license": "AGPL-3.0",
   "devDependencies": {
-    "css-loader": "0.25.0",
-    "extract-text-webpack-plugin": "1.0.1",
-    "file-loader": "0.9.0",
-    "flow-bin": "0.36.0",
-    "html-webpack-plugin": "2.22.0",
+    "css-loader": "0.26.1",    
+    "extract-text-webpack-plugin": "2.1.0",
+    "file-loader": "0.10.0",
+    "flow-bin": "0.36.0",        
+    "html-loader": "0.4.4",
+    "html-webpack-plugin": "2.28.0",
     "istanbul": "0.4.5",
     "jasmine": "2.5.2",
-    "json-loader": "0.5.4",
-    "node-sass": "3.10.0",
+    "json-loader": "0.5.4",          
+    "node-sass": "3.10.0",    
     "sass-loader": "4.0.2",
     "shrinkpack": "0.17.1",
     "style-loader": "0.13.1",
-    "webpack": "1.13.2",
-    "webpack-dev-server": "1.16.1",
-    "xmlhttprequest": "1.8.0",
-    "yargs": "5.0.0"
+    "webpack": "2.2.1",
+    "webpack-dev-server": "1.16.3"
   },
   "dependencies": {
-    "chance": "1.0.4",    
-    "d3": "4.4.0",    
+    "chance": "1.0.4",
+    "d3": "4.4.0",
     "d3-tip": "0.7.1",
-    "forever": "0.15.3",
-    "http-server": "0.9.0",
     "lodash": "4.16.2",
-    "papaparse": "4.1.2",
+    "node-nightly": "1.7.0",    
     "ramda": "0.22.1",
     "raw-loader": "0.5.1",
-    "sanitize-html": "1.13.0"
+    "sanitize-html": "1.13.0"   
   }
 }
