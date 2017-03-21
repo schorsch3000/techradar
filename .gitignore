@@ -1,7 +1,6 @@
 node_modules
 node_cache
 bower_components
-node_shrinkwrap
 dist
 examples
 *.swa
