@@ -1,13 +1,12 @@
 {
-  "name": "tech-radar",
+  "name": "techradar",
   "version": "0.1.0",
   "description": "Visualize data interactively on a web page as a radar.",
   "main": "index.js",
   "license":"AGPL-3.0",
   "scripts": {
     "test": "npm run flow && npm run jasmine",    
-    "dev": "NODE_ENV=development webpack-dev-server --dev --inline",    
-    "build": "NODE_ENV=production webpack -p --progress --colors",
+    "demo": "NODE_ENV=development webpack-dev-server --dev --inline",        
     "jasmine": "istanbul cover jasmine",
     "flow": "flow",
     "debug": "node-debug webpack",

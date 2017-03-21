@@ -3,10 +3,9 @@ Inspired by the radar of the consulting company Thoughtworks and initially based
 
 ## How To Use
 
-See the samples folder and the webpack.config.js on how to visualize your data on a radar.
+Type `npm run demo` to see a demo built with webpack.
+See the samples folder and the webpack.config.js on how to visualize your data on a radar and how it works in detail.
 
 ## Contribute
 
-All tasks are defined in `package.json`.
-
-Pull requests are welcome; please write tests whenever possible.
+Pull requests are very welcome; please write tests whenever possible.

@@ -3,8 +3,7 @@ require('../images/radar_legend.png');
 require('../src/stylesheets/base.scss');
 
 const d3 = require('d3');
-//const createRadar = require('../index');
-const createRadar = require('../src/radar-ui/factory');
+const createRadar = require('../index');
 
 const radarData = [
   {
