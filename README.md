@@ -1,4 +1,4 @@
-A library that generates an interactive radar that you can include easily into your webpage.
+An npm package to generate an interactive radar that you can include easily into your webpage.
 Inspired by the radar of the consulting company Thoughtworks and initially based on their respective open source project.
 
 ## How To Use
