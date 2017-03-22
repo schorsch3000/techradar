@@ -10,28 +10,28 @@ const radarData = [
     "name": "Hammer",
     "ring": "use",
     "quadrant": "Tools",
-    "isNew": "true",
+    "isNew": true,
     "description": "Good tool to get nails into walls."
   },
   {
     "name": "Nail",
     "ring": "try",
     "quadrant": "Technology",
-    "isNew": "true",
+    "isNew": "TRUE",
     "description": "Good technology to mount something on walls."
   },
   {
     "name": "Glueing",
     "ring": "avoid",
     "quadrant": "Method",
-    "isNew": "true",
+    "isNew": "False",
     "description": "I don't have good experiences with glueing things together."
   },  
   {
     "name": "NPM",
     "ring": "use",
     "quadrant": "Platform",
-    "isNew": "true",
+    "isNew": false,
     "description": "Well-known node package repository."
   },
 ];

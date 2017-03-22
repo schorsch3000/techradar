@@ -36,12 +36,26 @@ const InputSanitizer = function () {
       return processedBlip;
     }
 
+    function castBoolean(value) {
+        switch (typeof value) {
+            case "boolean":
+                return value;
+                break;
+            case "string":
+                return (value.toLowerCase() === 'true');                
+                break;
+            default:
+                throw new TypeError('Unexpected type');
+        }        
+    }
+
+
     var self = {};
     self.sanitize = function (rawBlip) {
       var blip = trimWhiteSpaces(rawBlip);
       blip.description = sanitizeHtml(blip.description, relaxedOptions);
       blip.name = sanitizeHtml(blip.name, restrictedOptions);
-      blip.isNew = sanitizeHtml(blip.isNew, restrictedOptions);
+      blip.isNew = castBoolean(sanitizeHtml(blip.isNew, restrictedOptions));
       blip.ring = sanitizeHtml(blip.ring, restrictedOptions);
       blip.quadrant = sanitizeHtml(blip.quadrant, restrictedOptions);
 
