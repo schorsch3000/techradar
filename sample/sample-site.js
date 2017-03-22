@@ -2,8 +2,12 @@
 require('../images/radar_legend.png');
 require('../src/stylesheets/base.scss');
 
-const d3 = require('d3');
-const createRadar = require('../index');
+// in your project, use the following line to include stylesheet information
+// require('../node_modules/techradar/src/stylesheets/base.scss');
+// make sure to proceess it to css as part of your build procedure, e.g. with webpack
+
+const createRadar = require('../index'); 
+//replace with require('techradar') when using the npm package 'techradar' in your project
 
 const radarData = [
   {
